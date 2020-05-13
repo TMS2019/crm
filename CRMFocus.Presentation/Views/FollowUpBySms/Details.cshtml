@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="body-content padding-top">
+        <div class="container-fluid">
+            <p class="title padding-bottom ">Manage SMS / Follow Up by SMS / <span class="red">Lihat Detail</span></p>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 nogap">
+                @*@Html.ActionLink("Lihat Detail", "Details", "FollowUpBySms", new { }, new { @class = "k-button bttn k-primary right margin-right padding-left padding-right" })*@
+            </div>
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nogap margin-top">
+                <div id="grid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="text" id="SMSFollowupIDtemp" style="display:none;" />
+@section scripts {
+    <script type="text/javascript" src="~/Scripts/modules/followUpBySmsDetails.js"></script>
+}
+

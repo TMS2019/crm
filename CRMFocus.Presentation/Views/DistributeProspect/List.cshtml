@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Distribute Prospect";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="body-content padding-top">
+        <div class="container-fluid">
+            <p class="title padding-bottom ">RO to H1 / Prospect To Deal / <span class="red">Distribute Prospect</span></p>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.Hidden("ProspectIds")
+                <div class="margin-bottom">
+                    <input id="input-btn-reset" type="reset" value="Reset" class="k-button bttn dark padding-right padding-left" />
+                    <input id="input-btn-save" type="button" value="Simpan" class="k-button bttn k-primary padding-right padding-left" />
+                    <input id="input-btn-export" type="button" value="Export ke Excel (.xls)" class="k-button bttn dark padding-right padding-left" data-toggle="modal" data-target="#myModal" />
+                </div>
+                <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1 nogap">
+                    <p class="standart-font weight float-left">Kantor Sales</p>
+                </div>
+                <div class="col-xs-12 col-sm-11 col-md-11 col-lg-11 nogap margin-right-57">
+                    @Html.DropDownList("Dealers")
+                </div>
+                <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1 nogap">
+                    <p class="standart-font weight float-left">Sales</p>
+                </div>
+                <div class="col-xs-12 col-sm-11 col-md-11 col-lg-11 nogap margin-right-57">
+                    @Html.DropDownList("Sales")
+                    <div class="margin-bottom">
+                        <input id="input-btn-autoassgin" type="button" value="Auto Assign" class="k-button bttn dark padding-right padding-left" />
+                        <input id="input-btn-assign" type="button" value="Assign" class="k-button bttn dark padding-right padding-left" />
+                    </div>
+                </div>
+                <input id="prospectIdTemp" type="text" style="display:none"/>
+            }
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nogap">
+                <div id="grid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts {
+    <script type="text/javascript">
+        var userRole = '@ViewBag.UserRole';
+    </script>
+    <script type="text/javascript" src="~/Scripts/underscore.js"></script>
+    <script type="text/javascript" src="~/Scripts/modules/distributeProspect.js"></script>
+}

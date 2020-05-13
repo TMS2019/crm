@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="body-content padding-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <p class="title padding-bottom ">Settings / <span class="red">Unit & Price Setting</span></p>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nogap">
+                        <div id="gridUnit">
+                        </div>
+                        <div class="margin-top"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts {
+    <script type="text/javascript" src="~/Scripts/modules/unitpricesetting.js"></script>
+}
+

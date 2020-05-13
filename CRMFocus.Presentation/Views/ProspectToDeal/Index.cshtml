@@ -1,0 +1,62 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Prospect To Deal";
+}
+<div class="row">
+    <div class="body-content padding-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <p class="title padding-bottom ">RO to H1 / <span class="red">Prospect to Deal</span></p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 nogap">
+                <form id="form-prospecttodeal" action="/DistributeProspect/List" method="post">
+                    <input id="input-txt-prospect-ids" name="prospectIds" type="text" style="display:none" />
+                    <input id="input-btn-distribute" type="button" value="Distribute" class="k-button bttn k-primary padding-right padding-left" />
+                    <input id="input-btn-export" type="button" value="Export ke Excel (.xls)" class="k-button bttn dark padding-right padding-left" data-toggle="modal" data-target="#myModal" />
+                </form>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"></div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nogap margin-top">
+                <div id="grid"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Export ke Excel</h4>
+            </div>
+            <div class="modal-body text-center">
+                <input type="submit" value="Export Semua Data Aktif" class="k-button bttn k-primary padding-right padding-left width100" />
+                <p class="margin-top padding-bottom">atau</p>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <input type="submit" value="Export data berdasarkan Sales" class="k-button bttn k-primary padding-right padding-left width100" />
+                        <div class="padding-bottom">
+                            <select id="act" class="width100">
+                                <option value="Akbar">Akbar</option>
+                                <option value="Novi">Novi</option>
+                                <option value="Renata">Renata</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" value="Export" class="k-button bttn k-primary padding-right padding-left" />
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <link href="~/frontend/css/bootstrap/datepicker3.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/frontend/js/bootstrap/datepicker.js"></script>
+    <script type="text/javascript" src="~/Scripts/modules/prospectToDeal.js"></script>
+}

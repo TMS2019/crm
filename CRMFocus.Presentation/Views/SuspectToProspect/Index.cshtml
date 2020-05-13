@@ -1,0 +1,147 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Suspect To Prospect";
+}
+
+<div class="row">
+    <div class="body-content padding-top">
+        <div class="container-fluid">
+            <p class="title padding-bottom ">RO to H1 / <span class="red">Suspect to Prospect</span></p>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 nogap">
+                <select id="action">
+                    <option value="0">Action</option>
+                    <option value="Inactive">Inactive</option>
+                    <option value="Distribute">Distribute</option>
+                </select>
+            </div>
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nogap margin-top">
+                <div id="grid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="text" id="suspecIdtemp" style="display:none;" />
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Follow Up By Phone</h4>
+            </div>
+            <div class="modal-body text-center">
+                <form>                
+                <div class="table-responsive margin-bottom">
+                    <table class="table">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 nogap">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nogap">
+                                <div class="box">
+                                    <div class="modal-header text-align-left nogap">
+                                        Data Pelanggan
+                                    </div>
+                                    <div class="content-body">
+                                        <ul id="detailcustomer" data-template="datacustomer" data-bind="source: customer"></ul>
+                                        <script id="datacustomer" type="text/x-kendo-template">
+                                            <li class="text-align-left">Nama : <br /><span>#=Name#</span></li>
+                                            <li class="text-align-left">Email : <br /><span>#=Email#</span></li>
+                                            <li class="text-align-left">Telepon : <br /><span>#=Telepon#</span></li>
+                                            <li class="text-align-left">Pembelian Terakhir : <br /><span>#=PembelianTerakhir#</span></li>
+                                            <li class="text-align-left">Current Sales : <br /><span>#=CurrentSalesName#</span></li>
+                                            <li class="text-align-left">Cabang Baru : <br /><span>#=CabangBaru#</span></li>
+                                        </script>
+                                   </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nogap margin-top">
+                                <div class="box nogap">
+                                    <div class="modal-header text-align-left nogap padding-top10 margin-right10 margin-left8 ">
+                                        Update
+                                    </div>
+                                    <div class="content-body-update" style="padding:1em 0;">
+                                        <p class="weight"><center><b>Status</b></center></p>
+                                        <div style="width:70%; display:block;">
+                                            <select id="selectUpdate" class="form-control" style="margin:0 0 0 22%;font-size:13px;">
+                                                <option value="5">Contacted</option>
+                                                <option value="6">Rejected</option>
+                                                <option value="7">Unreachable</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                    <div class="content-body-update" style="padding-bottom:1em">
+                                        <p class="weight"><center><b>Catatan</b></center></p>
+                                        <textarea name="note" id="note" class="k-textbox"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nogap margin-top">
+                                <div class="box">
+                                    <div class="modal-header text-align-left nogap">
+                                        Scenario
+                                    </div>
+                                    <div class="content-body-update text-align-left">
+                                        <p id="scenarioName">Scenario 1</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 nogap padding-left">
+                            <div class="box-script">
+                                <div class="modal-header text-align-left nogap">
+                                    Script
+                                </div>
+                                <div id="scriptForm" class="content-body-script text-align-left">
+                                    <div class="loaderscript"></div>
+                                    <div data-template="template" data-bind="source: arr"></div>
+                                </div>
+
+                                <script id="template" type="text/x-kendo-template">
+                                    <div class="form-group" style="margin:1em 0 0">
+                                        <div class="col-md-12" style="padding-left:0">
+                                            <label data-bind="attr: { for: ScriptCode}, text: Pertanyaan"></label>
+                                        </div>
+                                        # if (get("TipePertanyaan") == 5) {#
+                                        <select data-bind="source: Jawabans, value: Value" class="k-dropdown width" data-text-field="Text" data-value-field="Value" />
+                                        #}else if(get("TipePertanyaan") == '3'){#
+                                        <ul style="list-style:none; margin:0; padding:0">
+                                            # for (var i = 0; i < Jawabans.length; i++) { #
+                                            <li style="padding:0">
+                                                <input id="#=Jawabans[i].Text#" class="k-radio" type="radio" name="#=ScriptCode#" value="#=Jawabans[i].Value#" />
+                                                <label class="k-radio-label" for="#=Jawabans[i].Text#">#=Jawabans[i].Text#</label>
+                                            </li>
+                                            # } #
+                                        </ul>
+                                        #}else if(get("TipePertanyaan") == 1){#
+                                        <input class="k-textbox width" type="text" data-bind="attr: { name: ScriptCode}" # if (get("required")) {# required #} # />
+                                        #}else if(get("TipePertanyaan") == 2){#
+                                        <textarea class="k-textbox width" data-bind="attr: { name: ScriptCode}" # if (get("required")) {# required #} # />
+                                        #}
+                                        else if(get("TipePertanyaan") == 9){#
+                                        <input class="k-date" type="date" name="ScriptCode" # if (get("required")) {# required #} # />
+                                        #}#
+                                    </div>
+                                </script>
+                            </div>
+                            <div class="form-group" style="margin-top:1em">
+                                <input type="submit" value="Simpan" id="saveLog" class="k-button bttn k-primary padding-right padding-left" />
+                            </div>
+                            
+                        </div>
+                    </table>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts {
+    <link href="~/frontend/css/bootstrap/datepicker3.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/frontend/js/bootstrap/datepicker.js"></script>
+    <script type="text/javascript" src="~/Scripts/modules/suspectToProspect.js"></script>
+}
+

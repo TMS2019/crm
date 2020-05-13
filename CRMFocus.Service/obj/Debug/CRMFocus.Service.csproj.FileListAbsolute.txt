@@ -1,0 +1,15 @@
+D:\CRM_ASTRA\CRMFocus.Service\bin\Debug\CRMFocus.Service.dll
+D:\CRM_ASTRA\CRMFocus.Service\bin\Debug\CRMFocus.Service.pdb
+D:\CRM_ASTRA\CRMFocus.Service\obj\Debug\CRMFocus.Service.dll
+D:\CRM_ASTRA\CRMFocus.Service\obj\Debug\CRMFocus.Service.pdb
+D:\CRM_ASTRA\CRMFocus.Service\obj\Debug\CRMFocus.Service.csprojResolveAssemblyReference.cache
+D:\gtass\CRMFocus.Service\bin\Debug\CRMFocus.Service.dll
+D:\gtass\CRMFocus.Service\bin\Debug\CRMFocus.Service.pdb
+D:\gtass\CRMFocus.Service\obj\Debug\CRMFocus.Service.csprojResolveAssemblyReference.cache
+D:\gtass\CRMFocus.Service\obj\Debug\CRMFocus.Service.dll
+D:\gtass\CRMFocus.Service\obj\Debug\CRMFocus.Service.pdb
+G:\crm\CRMFocus.Service\bin\Debug\CRMFocus.Service.dll
+G:\crm\CRMFocus.Service\bin\Debug\CRMFocus.Service.pdb
+G:\crm\CRMFocus.Service\obj\Debug\CRMFocus.Service.dll
+G:\crm\CRMFocus.Service\obj\Debug\CRMFocus.Service.pdb
+G:\crm\CRMFocus.Service\obj\Debug\CRMFocus.Service.csprojResolveAssemblyReference.cache

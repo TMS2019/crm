@@ -1,0 +1,637 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="body-content padding-top">
+        <div class="container-fluid">
+            <p class="title padding-bottom">Scenario / <span class="red">New Scenario</span></p>
+            <div class="wizard">
+                <!-- Begin Wizard -->
+                <div class="wizard-inner">
+                    <!-- Begin Wizard Inner -->
+                    <div class="connecting-line"></div>
+                    <ul class="nav nav-tabs centering" role="tablist">
+                        <li role="presentation" class="active w-tab">
+                            <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab">
+                                <span class="round-tab">
+                                    <label>1</label>
+                                </span>
+                                <br />
+                                <div class="absolute z-index margin-top padding-top text-align-center width100px weight "><label class="margin-left-30">Tambah Detail Customer</label></div>
+                            </a>
+                        </li>
+                        <li role="presentation" class="disabled w-tab">
+                            <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab">
+                                <span class="round-tab">
+                                    <label>2</label>
+                                </span>
+                                <br />
+                                <div class="absolute z-index margin-top padding-top text-align-center width100px weight "><label class="margin-left-30">Tambah Detail Unit</label></div>
+                            </a>
+                        </li>
+                        <li role="presentation" class="disabled w-tab">
+                            <a href="#step3" data-toggle="tab" aria-controls="step2" role="tab">
+                                <span class="round-tab">
+                                    <label>3</label>
+                                </span>
+                                <br />
+                                <div class="absolute z-index margin-top padding-top text-align-center width100px weight "><label class="margin-left-30">Tambah Media</label></div>
+                            </a>
+                        </li>
+                    </ul>
+                </div><!-- /Wizard Inner -->
+                <form role="form">
+                    <!-- Form Wizard-->
+                    <div class="tab-content">
+                        <div class="tab-pane active" role="tabpanel" id="step1">
+
+                            <div class="container-fluid nogap">
+                                <hr />
+                                <div class="tabheader margin-top"><p>Step 1 - Tambah Detail Scenario</p></div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 k-content padding-bottom">
+                                    <fieldset name="TambahDetailScenarioView">
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div class="margin-top padding-top">
+                                                <ul class="fieldlist">
+                                                    <li>
+                                                        <label for="nama-scenario">Nama Scenario &#42;</label>
+                                                        <input id="nama-scenario" name="TambahDetailScenarioView[ScenarioName]" type="text" class="k-textbox width100" />
+                                                    </li>
+                                                    <li>
+                                                        <label for="s-catatan">Catatan</label>
+                                                        <textarea id="s-catatan" name="TambahDetailScenarioView[Note]" class="k-textbox width100"></textarea>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 margin-top padding-top padding-bottom">
+                                            <input type="checkbox" id="periodProgram" class="k-checkbox">
+                                            <label class="k-checkbox-label" for="periodProgram">&nbsp; Periode Program &#42;</label>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nogap margin-bottom padding-bottom">
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 nogap">
+                                                    <input id="datepicker" placeholder="Tanggal Mulai" name="TambahDetailScenarioView[StartDate]" title="datepicker" class="width100" data-role="datepicker" />
+                                                </div>
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <input id="datepicker2" placeholder="Tanggal Selesai" name="TambahDetailScenarioView[EndDate]" title="datepicker" class="width100" data-role="datepicker"/>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nogap">
+                                                <input type="checkbox" id="periodSms" class="k-checkbox">
+                                                <label class="k-checkbox-label" for="periodSms">&nbsp; Periode Distribusi SMS</label>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nogap">
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 nogap">
+                                                    <input id="datepicker3" placeholder="Tanggal Mulai" name="TambahDetailScenarioView[StartDistributionSMSDate]" title="datepicker" class="width100" data-role="datepicker"/>
+                                                    <button type="button" class="k-button bttn dark padding-right padding-left margin-top width100 ">Reset</button>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
+                                                    <input id="datepicker4" placeholder="Tanggal Selesai" name="TambahDetailScenarioView[EndDistributionSMSDate]" title="datepicker" class="width100" data-role="datepicker" />
+                                                    <button id="nextstep" type="button" class="k-button bttn k-primary margin-top width100 next-step-scenario">Selanjutnya</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="container margin-top">
+                            </div>
+                        </div><!-- /Step1-->
+                        <div class="tab-pane" role="tabpanel" id="step2">
+                            <!-- Begin Step2 -->
+                            <div class="container-fluid nogap">
+                                <hr />
+                                <a href="#"><p class="absolute weight red margin right margin-right10 size20 padding-right padding-top10 prev-step">Kembali</p></a>
+                                <div class="tabheader margin-top"><p>Step 2 - Tambah Customer Targeting</p></div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 k-content padding-bottom">
+                                    <div class="to-hide">
+                                        <!-- Begin to-hide-->
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div class="margin-top padding-top">
+                                                <label>Daftar Target Customer</label>
+                                                <ul class="targeting margin-top">
+                                                    <li>
+                                                        <input type="radio" name="target" id="target1" class="k-radio" value="a" checked="">
+                                                        <label class="k-radio-label" for="target1">Target Market 1</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="target" id="target2" class="k-radio" value="b">
+                                                        <label class="k-radio-label" for="target2">Target Market 2</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="target" id="target3" class="k-radio">
+                                                        <label class="k-radio-label" for="target3">Target Market 3</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="target" id="target4" class="k-radio">
+                                                        <label class="k-radio-label" for="target4">Target Market 4</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="target" id="target5" class="k-radio">
+                                                        <label class="k-radio-label" for="target5">Target Market 5</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="target" id="target6" class="k-radio">
+                                                        <label class="k-radio-label" for="target6">Target Market 6</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="target" id="target7" class="k-radio">
+                                                        <label class="k-radio-label" for="target7">Target Market 7</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <button id="tambahcustomer" class="k-button bttn dark width100 margin-top" type="button">+ tambah customer targeting baru</button>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div class="margin-top padding-top">
+                                                <label>Informasi Umum</label>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nogap margin-top padding-bottom10">
+                                                    <div class="shadowDetail nogap">
+                                                        <textarea id="showme" class="padding width100">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
+                                                        <textarea id="showme2" class="padding width100 display-none">222222Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
+                                                        <textarea id="showme3" class="padding width100 display-none">33333Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
+                                                        <textarea id="showme4" class="padding width100 display-none">4Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit ess cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit ess cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button id="nextstep" type="button" class="k-button bttn k-primary margin-top next-step">Selanjutnya</button>
+                                        </div>
+                                    </div><!--end to-hide class -->
+                                    <fieldset name="TambahCustomerTargetingView">
+                                        <div class="to-show">
+                                            <!-- begin to-show -->
+                                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                                <label for="input-name" class="margin-top">Nama Target Customer Baru &#42;</label>
+                                                <input id="input-name" name="TambahCustomerTargetingView[TargetCustumerName]" type="text" class="k-textbox width100 margin-top">
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 margin-top">
+                                                <!--profile-->
+                                                <p class="absolute weight red size20 nogap"><i class="fa fa-user padding-right" aria-hidden="true"></i>Profil</p><hr class="hr" />
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 margin-top">
+                                                    <!-- 1 -->
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                                            <label class="padding-top10">Pekerjaan</label>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                                            @Html.DropDownList("Profesion", (IEnumerable<SelectListItem>)ViewBag.Profesion, new { @class = "width100", Name = "TambahCustomerTargetingView[Profesion]" })
+                                                        </div>
+                                                    </div>
+                                                    <div class="row margin-top">
+                                                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                                            <label class="padding-top10">Jenis Kelamin</label>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                                            @Html.DropDownList("Gender", (IEnumerable<SelectListItem>)ViewBag.Gender, new { @class = "width100", Name = "TambahCustomerTargetingView[Gender]" })
+                                                        </div>
+                                                    </div>
+                                                    <div class="row margin-top">
+                                                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                                            <label class="padding-top10">Agama</label>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                                            @Html.DropDownList("Religion", (IEnumerable<SelectListItem>)ViewBag.Religion, new { @class = "width100", Name = "TambahCustomerTargetingView[Religion]" })
+                                                        </div>
+                                                    </div>
+                                                </div><!-- End 1 -->
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 margin-top">
+                                                    <!-- 2 -->
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                                            <label class="margin-left10">Tanggal Lahir</label>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 nogap">
+                                                            <div class="row">
+                                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                                    <input id="datepickerStartBod" name="TambahCustomerTargetingView[BirthDate1]" placeholder="Dari Tanggal" title="datepicker" class="width100" data-role="datepicker" />
+                                                                </div>
+                                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                                    <input id="datepickerEndBod" name="TambahCustomerTargetingView[BirthDate2]" placeholder="Sampai Tanggal" title="datepicker" class="width100" data-role="datepicker" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row margin-top">
+                                                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                                            <label class="margin-left10">Tahun</label>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 nogap">
+                                                            <div class="row">
+                                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                                    <input id="datepickerStartYear" name="TambahCustomerTargetingView[Year1]" placeholder="Dari Tahun" title="datepicker" class="width100" data-start="decade" data-depth="decade" data-format="yyyy" />
+                                                                </div>
+                                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                                    <input id="datepickerEndYear" name="TambahCustomerTargetingView[Year2]" placeholder="Sampai Tahun" title="datepicker" class="width100" data-start="decade" data-depth="decade" data-format="yyyy" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row margin-top">
+                                                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                                            <label class="padding-top10 margin-left10">Spending</label>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 nogap">
+                                                            @Html.DropDownList("Spending", (IEnumerable<SelectListItem>)ViewBag.Spending, new { @class = "width100", Name = "TambahCustomerTargetingView[Spending]" })
+                                                        </div>
+                                                    </div>
+                                                </div><!-- End 2 -->
+                                            </div><!--End profile-->
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 margin-top">
+                                                <!--Kendaraan-->
+                                                <p class="absolute weight red size20 nogap"><i class="fa fa-motorcycle padding-right" aria-hidden="true"></i>Kendaraan</p><hr class="hr-kendaraan" />
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 margin-top">
+                                                    <!-- 1 Kendaraan-->
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                                            <label class="padding-top10">Jumlah RO</label>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                                            <select id="JumlahRO" name="TambahCustomerTargetingView[JumlahRO]" class="width100">
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row margin-top">
+                                                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                                            <label class="padding-top10">Provinsi</label>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                                            @Html.DropDownList("Provinces", (IEnumerable<SelectListItem>)ViewBag.Provinces, new { @class = "width100", Name = "TambahCustomerTargetingView[ProvinceCode]" })
+                                                        </div>
+                                                    </div>
+                                                    <div class="row margin-top">
+                                                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                                            <label class="padding-top10">Kabupaten</label>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                                            @Html.DropDownList("Kabupatens", (IEnumerable<SelectListItem>)ViewBag.Kabupatens, new { @class = "width100", Name = "TambahCustomerTargetingView[KabupatenCode]" })
+                                                        </div>
+                                                    </div>
+                                                    <div class="row margin-top">
+                                                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                                            <label class="padding-top10">Kecamatan</label>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                                            @Html.DropDownList("Kecamatans", (IEnumerable<SelectListItem>)ViewBag.Kecamatans, new { @class = "width100", Name = "TambahCustomerTargetingView[KecamatanCode]" })
+                                                        </div>
+                                                    </div>
+                                                    <div class="row margin-top">
+                                                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                                            <label class="padding-top10">Kelurahan</label>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                                            @Html.DropDownList("Kelurahans", (IEnumerable<SelectListItem>)ViewBag.Kelurahans, new { @class = "width100", Name = "TambahCustomerTargetingView[KelurahanCode]" })
+                                                        </div>
+                                                    </div>
+                                                    <div class="row margin-top">
+                                                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                                            <label class="padding-top10">Market Segment</label>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                                            @Html.DropDownList("UnitTypeSegment", (IEnumerable<SelectListItem>)ViewBag.MarketSegment, new { @class = "width100", Name = "TambahCustomerTargetingView[MarketSegment]" })
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="row margin-top">
+                                                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                                            <label class="padding-top10">Market Type</label>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                                            @Html.DropDownList("UnitTypeSeries", (IEnumerable<SelectListItem>)ViewBag.marketType, new { @class = "width100", Name = "TambahCustomerTargetingView[marketType]" })
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="row margin-top">
+                                                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                                            <label class="padding-top10">Market Name</label>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                                            @Html.DropDownList("UnitMarketName", (IEnumerable<SelectListItem>)ViewBag.MarketName, new { @class = "width100", Name = "TambahCustomerTargetingView[MarketName]" })
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="row margin-top">
+                                                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                                            <label class="padding-top10">Customer Dari</label>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                                            @Html.DropDownList("ResourceType", (IEnumerable<SelectListItem>)ViewBag.ResourceType, new { @class = "width100", Name = "TambahCustomerTargetingView[ResourceType]" })
+                                                            <div id="showingDate" style="display:none;">
+                                                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 margin-top nogap padding-right">
+                                                                    <label>Start Date</label>
+                                                                    <input id="datepickerStartDate" name="TambahCustomerTargetingView[StartDate]" title="datepicker" class="width100" data-role="datepicker" />
+                                                                </div>
+                                                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 margin-top nogap">
+                                                                    <label>End Date</label>
+                                                                    <input id="datepickerEndDate" name="TambahCustomerTargetingView[EndDate]" title="datepicker" class="width100" data-role="datepicker" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row margin-top">
+                                                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                                            <label class="padding-top10">Tujuan</label>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                                            @Html.DropDownList("DestinationType", (IEnumerable<SelectListItem>)ViewBag.DestinationType, new { @class = "width100", Name = "TambahCustomerTargetingView[DestinationType]" })
+                                                        </div>
+                                                    </div>
+                                                </div><!-- End 1 Kendaraan-->
+                                            </div><!-- End Kendaraan-->
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 margin-top">
+                                                <!--Filter Lain-->
+                                                <p class="absolute weight gray nogap">Filter Lain</p><hr class="hr-filter" />
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                    <div class="row">
+                                                        <ul id="filter">
+                                                            <li class="k-state-active">
+                                                                <fieldset class="FilterLainView">
+                                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nogap margin-top">
+                                                                        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 margin-top padding-top10 nogap">
+                                                                            <span class="fa fa-times removeBtn text-danger" style="position:relative;top:-3px;left:30px;"></span>
+                                                                            <input type="checkbox" id="checkFilter" class="k-checkbox">
+                                                                            <label class="k-checkbox-label checkFilter" for="checkFilter"></label>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                                                            <label>Section</label>
+                                                                            <select id="Section" name="TambahCustomerTargetingView[FilterLainView][][Section]" class="width100 section">
+                                                                                <option value="TglBeli">Buying date</option>
+                                                                                <option value="2">Last Service Date</option>
+                                                                                <option value="3">kbp-1</option>
+                                                                                <option value="4">kbp-2</option>
+                                                                                <option value="5">kbp-3</option>
+                                                                                <option value="6">kbp-4</option>
+                                                                                <option value="7">Service Reguler</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                                                            <label>Tanggal Mulai</label>
+                                                                            <input id="datepickerStartDateFilterLain" name="TambahCustomerTargetingView[FilterLainView][][TanggalMulai]" placeholder="Tanggal Mulai" title="datepicker" class="width100 startDate" data-role="datepicker" />
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1">
+                                                                            <label>Operator</label>
+                                                                            <select id="Operator" name="TambahCustomerTargetingView[FilterLainView][][Operator]" class="width100 operator">
+                                                                                <option value="+">+</option>
+                                                                                <option value="-">-</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                                                            <label>Jumlah</label>
+                                                                            <input type="text" id="Jumlah" name="TambahCustomerTargetingView[FilterLainView][][Jumlah]" class="k-textbox width100" />
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                                                            <label>Hari / Bulan</label>
+                                                                            <select id="DayMonth" name="TambahCustomerTargetingView[FilterLainView][][DayOrMonth]" class="width100 DayOrMonth">
+                                                                                <option value="days">Days</option>
+                                                                                <option value="month">Month</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                                                            <label>Logic</label>
+                                                                            <select id="Logic" name="TambahCustomerTargetingView[FilterLainView][][Logic]" class="width100 logic">
+                                                                                <option value="and">And</option>
+                                                                                <option value="or">Or</option>
+                                                                                <option value="-">-</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </fieldset>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                        </div>
+                                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                            <button type="button" class="k-button bttn k-primary margin-top float-right" id="tambahFilter">+ Tambah Filter</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /Filter Lain -->
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 margin-top">
+                                                <!-- Begin Check Leads -->
+                                                <p class="absolute weight red size20 nogap"><i class="fa fa-line-chart padding-right" aria-hidden="true"></i>Check Leads</p><hr class="hr-kendaraan" />
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1">
+                                                        <label class="padding-top10">Total Leads</label>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                                                        <input id="totalLead" type="text" class="k-textbox width100">
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                                                        <button id="checkLeadBtn" type="button" class="k-button k-primary bttn padding-right padding-left">Check</button>
+                                                    </div>
+                                                </div>
+                                                <div class="row margin-top">
+                                                    <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1">
+                                                        <label class="padding-top10">Max Leads</label>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                                        <input type="text" class="k-textbox width100">
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1">
+                                                        <label class="padding-top10 padding-left">Sort By</label>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                                                        <select id="act">
+                                                            <option value="Active">Active</option>
+                                                            <option value="Inactive">Inactive</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /Check Leads-->
+                                            <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 text-center margin-top">
+                                                <button type="button" class="k-button bttn dark padding-right padding-left margin-top">Reset</button>
+                                                <button id="nextstep" type="button" class="k-button bttn k-primary margin-top next-step-targeting">Selanjutnya</button>
+                                            </div>
+                                        </div><!-- /to-show-->
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="container margin-top">
+                                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                </div>
+                            </div>
+
+                        </div><!-- /Step2-->
+                        <div class="tab-pane" role="tabpanel" id="step3">
+                            <!-- Begin Step3 -->
+                            <fieldset name="TambahMediaView">
+
+                                <div class="container-fluid nogap">
+                                    <hr />
+                                    <a href="#"><p class="absolute weight red margin right margin-right10 size20 padding-right padding-top10 prev-step">Kembali</p></a>
+                                    <div class="tabheader"><p>Step 3 - Tambah Media</p></div>
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 k-content padding-bottom">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                            <div class="margin-top padding-top">
+                                                <ul id="panelbar">
+                                                    <input type="checkbox" id="isSMS" name="isSMS" class="k-checkbox">
+                                                    <label class="k-checkbox-label" for="isSMS"></label>
+                                                    <li class="k-state-active">
+                                                        <p class="absolute weight red size20 nogap top-25">SMS</p><hr class="hrmedia" />
+                                                        <div class="row">
+                                                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 nogap margin-top">
+                                                                <ul id="SmsTokenList" class="targeting media margin-top">
+                                                                    <li class="cursor-pointer">
+                                                                        <label>Nama</label>
+                                                                    </li>
+                                                                    <li class="cursor-pointer">
+                                                                        <label>Edukasi</label>
+                                                                    </li>
+                                                                    <li class="cursor-pointer">
+                                                                        <label>Agama</label>
+                                                                    </li>
+                                                                    <li class="cursor-pointer">
+                                                                        <label>Nama Dealer</label>
+                                                                    </li>
+                                                                    <li class="cursor-pointer">
+                                                                        <label>Alamat Dealer</label>
+                                                                    </li>
+                                                                    <li class="cursor-pointer">
+                                                                        <label>Gender</label>
+                                                                    </li>
+                                                                    <li class="cursor-pointer">
+                                                                        <label>Servis Reguler</label>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 nogap margin-top">
+                                                                <label class="margin-top margin-left10">Script</label><br />
+                                                                <div class="shadow margin-left10 nogap">
+                                                                    <textarea id="SMSScript" class="k-textbox width100 padding" name="TambahMediaView[SMSScript]" rows="8">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                            <div class="margin-top padding-top">
+                                                <ul id="panelbar2">
+                                                    <input type="checkbox" id="isCall" name="isCall" class="k-checkbox">
+                                                    <label class="k-checkbox-label" for="isCall"></label>
+                                                    <li class="k-state-active">
+                                                        <p class="absolute weight red size20 nogap top-25">Telepon</p><hr class="hrmedia" />
+                                                        <div class="row">
+                                                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 nogap margin-top">
+                                                                <ul id="CallTokenList" class="targeting media margin-top">
+                                                                    <li class="cursor-pointer">
+                                                                        <label>Nama</label>
+                                                                    </li>
+                                                                    <li class="cursor-pointer">
+                                                                        <label>Edukasi</label>
+                                                                    </li>
+                                                                    <li class="cursor-pointer">
+                                                                        <label>Agama</label>
+                                                                    </li>
+                                                                    <li class="cursor-pointer">
+                                                                        <label>Nama Dealer</label>
+                                                                    </li>
+                                                                    <li class="cursor-pointer">
+                                                                        <label>Alamat Dealer</label>
+                                                                    </li>
+                                                                    <li class="cursor-pointer">
+                                                                        <label>Gender</label>
+                                                                    </li>
+                                                                    <li class="cursor-pointer">
+                                                                        <label>Servis Reguler</label>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+
+                                                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 nogap margin-top">
+                                                                <label class="margin-top margin-left10">Script</label>
+                                                                <div class="shadow margin-left10 padding">
+                                                                        <ul id="QuestionType">
+                                                                            <li class="k-state-active">
+                                                                                <fieldset name="CallScripts">
+                                                                                    <span class="hrMediaView"></span>
+                                                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                                                        <span class="fa fa-times removeBtn text-danger float-right padding-right padding-top"></span>
+                                                                                    </div>
+                                                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nogap margin-top">
+                                                                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 nogap">
+                                                                                            <p class="padding-right10">Tipe Pertanyaan</p>
+                                                                                        </div>
+                                                                                        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 nogap">
+                                                                                            <select id="Short" name="TambahMediaView[CallScripts][][TipePertanyaan]" class="form-control">
+                                                                                                <option value="1">Short Answer</option>
+                                                                                                <option value="2">Paragraph</option>
+                                                                                                <option value="3">Radio Button</option>
+                                                                                                <option value="4">Checkboxes</option>
+                                                                                                <option value="5">Dropdown</option>
+                                                                                                <option value="6">Linier Scale</option>
+                                                                                                <option value="7">Multiple Choice Grid</option>
+                                                                                                <option value="8">Checkbox Grid</option>
+                                                                                                <option value="9">Date</option>
+                                                                                                <option value="10">Time</option>
+                                                                                            </select>
+                                                                                        </div>
+                                                                                        <textarea id="s-textarea" name="TambahMediaView[CallScripts][][Pertanyaan]" class="text-box width80 margin-top padding"></textarea>
+                                                                                        <div id="showAnswer" class="display-none">
+                                                                                            <ul id="answer">
+                                                                                                <li class="k-state-active">
+                                                                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nogap margin-top">
+                                                                                                        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 nogap">
+                                                                                                            <img src="/frontend/images/bullet2.png" class="padding-top10">
+                                                                                                        </div>
+                                                                                                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 nogap">
+                                                                                                            <input id="jawaban" name="TambahMediaView[CallScripts][][Jawabans][][Text]" placeholder="Jawaban" />
+                                                                                                        </div>
+                                                                                                        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 nogap">
+                                                                                                            <span class="fa fa-times removeBtn text-danger" style="position:relative;top:7px;left:0;margin-left:15px;"></span>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </li>
+
+                                                                                            </ul>
+                                                                                            <label class="margin-top cursor-pointer float-right border-bottom" id="tambahAnswer">+ Tambah Jawaban</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    </fieldset>
+                                                                              </li>
+                                                                        </ul>
+                                                                    <button type="button" class="k-button bttn k-primary margin-top" id="tambahPertanyaan">+ Tambah</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                        </div>
+                                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                            <ul class="pager wizard">
+                                                <li class="last"><input type="submit" value="Simpan" class="k-button bttn k-primary padding-right padding-left" /></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                        </div>
+                                    </div>
+                                </div>
+                                </fieldset>
+                        </div><!-- /Step3-->
+                    </div>
+                </form><!-- /Form Wizard-->
+            </div><!-- /Wizard -->
+        </div>
+    </div>
+</div>
+
+            @section scripts {
+                <script type="text/javascript" src="~/frontend/js/wizard.js"></script>
+                <script type="text/javascript" src="~/Scripts/modules/createScenario.js"></script>
+            }
+

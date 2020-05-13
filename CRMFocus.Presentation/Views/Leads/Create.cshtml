@@ -1,0 +1,248 @@
+﻿@{
+    ViewBag.Title = "Leads";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="body-content padding-top">
+        <div class="container-fluid">
+            <p class="title padding-bottom">Leads Database / <span class="red">Create New</span></p>
+            <div class="wizard">
+                <div class="wizard-inner">
+                    <div class="connecting-line"></div>
+                    <ul class="nav nav-tabs" role="tablist">
+
+                        <li role="presentation" class="active">
+                            <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab">
+                                <span class="round-tab">
+                                    <label>1</label>
+                                </span>
+                                <br />
+                                <div class="absolute z-index margin-top padding-top text-align-center width100px weight "><label class="margin-left-30">Tambah Detail Customer</label></div>
+                            </a>
+                        </li>
+
+                        <li role="presentation" class="disabled">
+                            <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab">
+                                <span class="round-tab">
+                                    <label>2</label>
+                                </span>
+                                <br />
+                                <div class="absolute z-index margin-top padding-top text-align-center width100px weight "><label class="margin-left-30">Tambah Detail Unit</label></div>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <form role="form">
+                    <div class="tab-content">
+                        <div class="tab-pane active" role="tabpanel" id="step1">
+
+                            <div class="container-fluid nogap">
+                                <div class="tabheader"><p class="weight">Step 1 - Tambah Detail Customer</p></div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 k-content">
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <div class="margin-top padding-top">
+                                            <fieldset>
+                                            <ul class="fieldlist">
+                                                <li>
+                                                    <label for="qqqq">Title</label>
+                                                    @Html.DropDownList("GetTitle", (IEnumerable<SelectListItem>)ViewBag.GetTitle, new { @class = "width100" })
+                                                </li>
+                                                <li>
+                                                    <label for="input-name">Nama <span class="text-required">&#42;</span></label>
+                                                    <input id="input-name" name="Name" type="text" class="k-textbox width100" />
+                                                </li>
+                                                <li>
+                                                    <label for="input-telepon">Telepon <span class="text-required">&#42;</span></label>
+                                                    <input id="input-phone" name="CellNo" type="text" class="k-textbox width100" />
+                                                </li>
+                                                <li>
+                                                    <label for="input-customer-code">Customer Code</label>
+                                                    @Html.DropDownList("CustomerCode", (IEnumerable<SelectListItem>)ViewBag.CustomerCode, new { @class = "width100" })
+                                                    @*<input id="input-customer-code" name="CustomerCode" type="text" class="k-textbox width100" />*@
+                                                </li>
+                                                <li>
+                                                    <label for="input-email">Email</label>
+                                                    <input id="input-email" name="Email" type="text" class="k-textbox width100" />
+                                                </li>
+                                                <li>
+                                                    <label for="Birthdays">Tanggal lahir</label>
+                                                    <input id="Birthdays" name="BirthDate" value="10/10/2011" title="datepicker" class="width100" />
+                                                </li>
+                                                <li>
+                                                    <label for="Religions">Agama</label>
+                                                    @Html.DropDownList("Religion", (IEnumerable<SelectListItem>)ViewBag.Religion, new { @class = "width100" })
+                                                </li>
+                                                <li>
+                                                    <label for="Genders">Jenis Kelamin</label>
+                                                    @Html.DropDownList("Gender", (IEnumerable<SelectListItem>)ViewBag.Gender, new { @class = "width100" })
+                                                </li>
+                                                <li>
+                                                    <label for="input-pendidikan">Pendidikan Terakhir</label>
+                                                    @Html.DropDownList("Education", (IEnumerable<SelectListItem>)ViewBag.Education, new { @class = "width100" })
+                                                    @*<input id="input-pendidikan" type="text" class="k-textbox width100" />*@
+                                                </li>
+                                                <li>
+                                                    <label for="input-profesi">Profesi</label>
+                                                    @Html.DropDownList("Profesion", (IEnumerable<SelectListItem>)ViewBag.Profesion, new { @class = "width100" })
+                                                    @*<input id="input-profesi" type="text" class="k-textbox width100" />*@
+                                                </li>
+                                                <li>
+                                                    <label for="s-textarea">Alamat</label>
+                                                    <textarea id="s-textarea" name="Address" class="k-textbox width100"></textarea>
+                                                </li>
+                                                <li>
+                                                    <label for="Spendings">Spending</label>
+                                                    @Html.DropDownList("Spending", (IEnumerable<SelectListItem>)ViewBag.Spending, new { @class = "width100" })
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="isCallable" id="agree" class="k-checkbox" checked>
+                                                    <label class="k-checkbox-label" for="agree">&nbsp; Bersedia Dihubungi</label>
+                                                </li>
+                                                <li class="margin-bottom">
+                                                    <input type="checkbox" id="isunit" class="k-checkbox">
+                                                    <label class="k-checkbox-label" for="isunit">&nbsp; Memiliki Motor</label><p class="red padding-left standart-font">(pilih untuk menambahkan detail unit)</p>
+                                            </ul>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                </div>
+                                <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+                                    <ul class="pager wizard">
+                                        <li><input type="reset" value="Reset" class="k-button bttn dark padding-right padding-left" /></li>
+                                        <li><input id="save" type="submit" value="Simpan" class="k-button bttn k-primary padding-right padding-left" /></li>
+                                        <li><input id="nextstep" type="button" value="Selanjutnya" class="k-button bttn k-primary padding-right padding-left next-step" /></li>
+
+                                        @*<li><input type="reset" id="nextstep" class="k-button bttn k-primary padding-right padding-left display-none next-step selanjutnya" value="SELANJUTNYA" /></li>*@
+                                    </ul>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" role="tabpanel" id="step2">
+
+                            <div class="container-fluid nogap">
+                                <a href="#"><p class="absolute weight red margin right margin-right10 size20 padding-right padding-top10 prev-step">Kembali</p></a>
+                                <div class="tabheader"><p class="weight">Step 2 - Tambah Detail Unit</p></div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 k-content padding-bottom">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="margin-top padding-top">
+                                            <ul id="panelbar">
+                                                <li class="k-state-active padding-top10">
+                                                    <p class="absolute weight red size20 nogap top-25 margin-left-21">Detail Unit</p><hr class="hrmedia" />
+                                                    <span class="fa fa-times removeBtn text-danger float-right" style="top:-28px;position: relative;right: 10px;"></span>
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 margin-bottom">
+                                                            <fieldset name="LeadsUnit">
+                                                                <ul>
+                                                                    <li>
+                                                                        <ul class="fieldlist margin-top margin-bottom">
+                                                                            <li>
+                                                                                <label for="input-kode">Kode Mesin <span class="text-required">&#42;</span></label>
+                                                                                <input id="input-kode" name="EngineCode" type="text" class="k-textbox width100" />
+                                                                            </li>
+                                                                            <li>
+                                                                                <label for="input-nomor">Nomor Mesin <span class="text-required">&#42;</span></label>
+                                                                                <input id="input-nomor" name="EngineNo" type="text" class="k-textbox width100" />
+                                                                            </li>
+                                                                            <li>
+                                                                                <label for="MarketSegment">Market Segmen</label>
+                                                                                @Html.DropDownList("UnitTypeSegment", (IEnumerable<SelectListItem>)ViewBag.UnitTypeSegment, new { @class = "width100" })
+                                                                            </li>
+                                                                            <li>
+                                                                                <label for="Market">Market Type</label>
+                                                                                @Html.DropDownList("UnitTypeSeries", (IEnumerable<SelectListItem>)ViewBag.MarketType, new { @class = "width100" })
+                                                                            </li>
+                                                                            <li>
+                                                                                <label for="MarketName">Market Name</label>
+                                                                                @Html.DropDownList("UnitMarketName", (IEnumerable<SelectListItem>)ViewBag.UnitMarketName, new { @class = "width100" })
+                                                                            </li>
+                                                                            <li>
+                                                                                <label for="TanggalBeli">Tanggal Beli</label>
+                                                                                <input id="TanggalBeli" name="TglBeli" value="10/10/2011" title="datepicker" class="width100" />
+                                                                            </li>
+                                                                            <li>
+                                                                                <label for="PaymentType">Tipe Pembayaran</label>
+                                                                                @Html.DropDownList("PaymentType", (IEnumerable<SelectListItem>)ViewBag.PaymentType, new { @class = "width100" })
+                                                                            </li>
+                                                                            <li>
+                                                                                <label for="Provinces">Provinsi</label>
+                                                                                @Html.DropDownList("Provinsi", (IEnumerable<SelectListItem>)ViewBag.Provinsi, new { @class = "width100" })
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="row nogap">
+                                                                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 nogap">
+                                                                                        <label for="Kabupatens">Kabupaten</label>
+                                                                                        @Html.DropDownList("Kabupaten", (IEnumerable<SelectListItem>)ViewBag.Kabupaten, new { @class = "width100" })
+                                                                                    </div>
+                                                                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                                                                        <label for="Kecamatans">Kecamatan</label>
+                                                                                        @Html.DropDownList("Kecamatan", (IEnumerable<SelectListItem>)ViewBag.Kecamatan, new { @class = "width100" })
+                                                                                    </div>
+                                                                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                                                                        <label for="Kelurahans">Kelurahan</label>
+                                                                                        @Html.DropDownList("Kelurahan", (IEnumerable<SelectListItem>)ViewBag.Kelurahan, new { @class = "width100" })
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <label for="ServiceType">Tipe Servis</label>
+                                                                                @Html.DropDownList("ServiceType", (IEnumerable<SelectListItem>)ViewBag.ServiceType, new { @class = "width100" })
+                                                                            </li>
+                                                                            <li>
+                                                                                <label for="Services">Tanggal Servis</label>
+                                                                                <input id="Services" name="SeviceDate" value="10/10/2011" title="datepicker" class="width100" />
+                                                                            </li>
+                                                                            <li>
+                                                                                <label for="sumberdata">Sumber Data <span class="text-required">&#42;</span></label>
+                                                                                <input id="sumberdata" name="SourceData" type="text" class="k-textbox width100" />
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </fieldset>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <input type="button" value="+ Tambah Unit Baru" class="k-button bttn k-primary margin-top" id="tambahUnit" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                    <ul class="pager wizard">
+                                        <li><input type="reset" value="Reset" class="k-button bttn dark padding-right padding-left" /></li>
+                                        <li><input type="submit" value="Simpan" class="k-button bttn k-primary padding-right padding-left" /></li>
+                                    </ul>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                </div>
+                            </div><!--end wizard -->
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script type="text/javascript" src="~/frontend/js/wizard.js"></script>
+    <script type="text/javascript" src="~/Scripts/modules/createLeads.js"></script>
+}

@@ -1,0 +1,253 @@
+<<<<<<< HEAD
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{30DC0139-84C1-408B-902E-D2E42EF03B75}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CRMFocus.DataAccess</RootNamespace>
+    <AssemblyName>CRMFocus.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CRMFocusContext.cs" />
+    <Compile Include="Implementations\CustomerProfileRefRepository.cs" />
+    <Compile Include="Implementations\DealerRepository.cs" />
+    <Compile Include="Implementations\DummyRepository.cs" />
+    <Compile Include="Implementations\KabupatenRepository.cs" />
+    <Compile Include="Implementations\KecamatanRepository.cs" />
+    <Compile Include="Implementations\KelurahanRepository.cs" />
+    <Compile Include="Implementations\LeadsRepository.cs" />
+    <Compile Include="Implementations\LeadsTemporaryRepository.cs" />
+    <Compile Include="Implementations\LeadsUnitTransactionRepository.cs" />
+    <Compile Include="Implementations\LeadsUnitTransactionTemporaryRepository.cs" />
+    <Compile Include="Implementations\MainDealerRepository.cs" />
+    <Compile Include="Implementations\MasterStatusRepository.cs" />
+    <Compile Include="Implementations\ProspectFollowUpRepository.cs" />
+    <Compile Include="Implementations\ProspectRepository.cs" />
+    <Compile Include="Implementations\ProspectTemporaryRepository.cs" />
+    <Compile Include="Implementations\ProvinceRepository.cs" />
+    <Compile Include="Implementations\ScenarioFilterRepository.cs" />
+    <Compile Include="Implementations\ScenarioLeadMappingRepository.cs" />
+    <Compile Include="Implementations\ScenarioHistoryRepository.cs" />
+    <Compile Include="Implementations\ScenarioRepository.cs" />
+    <Compile Include="Implementations\ScenarioSettingRepository.cs" />
+    <Compile Include="Implementations\SMSFollowupRepository.cs" />
+    <Compile Include="Implementations\SuspectFollowUpRepository.cs" />
+    <Compile Include="Implementations\SuspectRepository.cs" />
+    <Compile Include="Implementations\SuspectTemporaryRepository.cs" />
+    <Compile Include="Implementations\UnitPriceSettingRepository.cs" />
+    <Compile Include="Interfaces\ICustomerProfileRefRepository.cs" />
+    <Compile Include="Interfaces\IDealerRepository.cs" />
+    <Compile Include="Interfaces\IDummyRepository.cs" />
+    <Compile Include="Interfaces\IKabupatenRepository.cs" />
+    <Compile Include="Interfaces\IKecamatanRepository.cs" />
+    <Compile Include="Interfaces\IKelurahanRepository.cs" />
+    <Compile Include="Interfaces\ILeadsRepository.cs" />
+    <Compile Include="Interfaces\ILeadsTemporaryRepository.cs" />
+    <Compile Include="Interfaces\ILeadsUnitTransactionRepository.cs" />
+    <Compile Include="Interfaces\ILeadsUnitTransactionTemporaryRepository.cs" />
+    <Compile Include="Interfaces\IMainDealerRepository.cs" />
+    <Compile Include="Interfaces\IMasterStatusRepository.cs" />
+    <Compile Include="Interfaces\IScenarioHistoryRepository.cs" />
+    <Compile Include="Interfaces\ISMSFollowupRepository.cs" />
+    <Compile Include="Interfaces\IUnitPriceSettingRepository.cs" />
+    <Compile Include="Interfaces\IProspectFollowUpRepository.cs" />
+    <Compile Include="Interfaces\IProspectRepository.cs" />
+    <Compile Include="Interfaces\IProspectTemporaryRepository.cs" />
+    <Compile Include="Interfaces\IProvinceRepository.cs" />
+    <Compile Include="Interfaces\IScenarioFilterRepository.cs" />
+    <Compile Include="Interfaces\IScenarioLeadMappingRepository.cs" />
+    <Compile Include="Interfaces\IScenarioRepository.cs" />
+    <Compile Include="Interfaces\IScenarioSettingRepository.cs" />
+    <Compile Include="Interfaces\ISuspectFollowUpRepository.cs" />
+    <Compile Include="Interfaces\ISuspectRepository.cs" />
+    <Compile Include="Interfaces\ISuspectTemporaryRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CRMFocus.Common\CRMFocus.Common.csproj">
+      <Project>{4b474c61-793d-4bcc-b1e1-faf04d62c0ef}</Project>
+      <Name>CRMFocus.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CRMFocus.Entity\CRMFocus.Entity.csproj">
+      <Project>{a5be0744-b36c-4f14-83db-489a034576e8}</Project>
+      <Name>CRMFocus.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+=======
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{30DC0139-84C1-408B-902E-D2E42EF03B75}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CRMFocus.DataAccess</RootNamespace>
+    <AssemblyName>CRMFocus.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CRMFocusContext.cs" />
+    <Compile Include="Implementations\CustomerProfileRefRepository.cs" />
+    <Compile Include="Implementations\DealerRepository.cs" />
+    <Compile Include="Implementations\DummyRepository.cs" />
+    <Compile Include="Implementations\EmployeeRepository.cs" />
+    <Compile Include="Implementations\KabupatenRepository.cs" />
+    <Compile Include="Implementations\KecamatanRepository.cs" />
+    <Compile Include="Implementations\KelurahanRepository.cs" />
+    <Compile Include="Implementations\LeadsRepository.cs" />
+    <Compile Include="Implementations\LeadsTemporaryRepository.cs" />
+    <Compile Include="Implementations\LeadsUnitTransactionRepository.cs" />
+    <Compile Include="Implementations\LeadsUnitTransactionTemporaryRepository.cs" />
+    <Compile Include="Implementations\MainDealerRepository.cs" />
+    <Compile Include="Implementations\MasterStatusRepository.cs" />
+    <Compile Include="Implementations\ProspectFollowUpRepository.cs" />
+    <Compile Include="Implementations\ProspectRepository.cs" />
+    <Compile Include="Implementations\ProspectTemporaryRepository.cs" />
+    <Compile Include="Implementations\ProvinceRepository.cs" />
+    <Compile Include="Implementations\ScenarioFilterRepository.cs" />
+    <Compile Include="Implementations\ScenarioLeadMappingRepository.cs" />
+    <Compile Include="Implementations\ScenarioRepository.cs" />
+    <Compile Include="Implementations\ScenarioSettingRepository.cs" />
+    <Compile Include="Implementations\SMSFollowupRepository.cs" />
+    <Compile Include="Implementations\SuspectFollowUpRepository.cs" />
+    <Compile Include="Implementations\SuspectRepository.cs" />
+    <Compile Include="Implementations\SuspectTemporaryRepository.cs" />
+    <Compile Include="Implementations\UnitPriceSettingRepository.cs" />
+    <Compile Include="Interfaces\ICustomerProfileRefRepository.cs" />
+    <Compile Include="Interfaces\IDealerRepository.cs" />
+    <Compile Include="Interfaces\IDummyRepository.cs" />
+    <Compile Include="Interfaces\IEmployeeRepository.cs" />
+    <Compile Include="Interfaces\IKabupatenRepository.cs" />
+    <Compile Include="Interfaces\IKecamatanRepository.cs" />
+    <Compile Include="Interfaces\IKelurahanRepository.cs" />
+    <Compile Include="Interfaces\ILeadsRepository.cs" />
+    <Compile Include="Interfaces\ILeadsTemporaryRepository.cs" />
+    <Compile Include="Interfaces\ILeadsUnitTransactionRepository.cs" />
+    <Compile Include="Interfaces\ILeadsUnitTransactionTemporaryRepository.cs" />
+    <Compile Include="Interfaces\IMainDealerRepository.cs" />
+    <Compile Include="Interfaces\IMasterStatusRepository.cs" />
+    <Compile Include="Interfaces\ISMSFollowupRepository.cs" />
+    <Compile Include="Interfaces\IUnitPriceSettingRepository.cs" />
+    <Compile Include="Interfaces\IProspectFollowUpRepository.cs" />
+    <Compile Include="Interfaces\IProspectRepository.cs" />
+    <Compile Include="Interfaces\IProspectTemporaryRepository.cs" />
+    <Compile Include="Interfaces\IProvinceRepository.cs" />
+    <Compile Include="Interfaces\IScenarioFilterRepository.cs" />
+    <Compile Include="Interfaces\IScenarioLeadMappingRepository.cs" />
+    <Compile Include="Interfaces\IScenarioRepository.cs" />
+    <Compile Include="Interfaces\IScenarioSettingRepository.cs" />
+    <Compile Include="Interfaces\ISuspectFollowUpRepository.cs" />
+    <Compile Include="Interfaces\ISuspectRepository.cs" />
+    <Compile Include="Interfaces\ISuspectTemporaryRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CRMFocus.Common\CRMFocus.Common.csproj">
+      <Project>{4b474c61-793d-4bcc-b1e1-faf04d62c0ef}</Project>
+      <Name>CRMFocus.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CRMFocus.Entity\CRMFocus.Entity.csproj">
+      <Project>{a5be0744-b36c-4f14-83db-489a034576e8}</Project>
+      <Name>CRMFocus.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+>>>>>>> c343960769004cf6abd31ee4f1ccd42cac3e3023
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

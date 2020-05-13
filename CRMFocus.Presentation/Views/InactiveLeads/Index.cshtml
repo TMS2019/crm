@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="body-content padding-top">
+        <div class="container-fluid">
+            <p class="title padding-bottom ">Leads Database / <span class="red">Inactive Leads</span></p>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 nogap">
+                <select id="action">
+                    <option value="0">Action</option>
+                    <option value="Reactivate">Reactivate</option>
+                    <option value="Delete">Delete</option>
+                </select>
+            </div>
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nogap margin-top">
+                <div id="grid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="text" id="suspecIdtemp" style="display:none;"/>
+
+
+@section scripts {
+    <script type="text/javascript" src="~/Scripts/modules/inactiveLeads.js"></script>
+}

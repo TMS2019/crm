@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Scenario Approval";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="body-content padding-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <p class="title padding-bottom "><span class="red">Scenario Approval</span></p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nogap margin-top">
+                <div id="grid"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="text" id="scenarioIdtemp" style="display:none;" />
+
+@section scripts {
+    <script type="text/javascript" src="~/Scripts/modules/scenarioApproval.js"></script>
+}

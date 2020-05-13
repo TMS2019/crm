@@ -1,0 +1,215 @@
+﻿@model CRMFocus.Domain.ScenarioApprovalDetailView
+
+@{
+    ViewBag.Title = "Approve Scenario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="body-content padding-top">
+        <div class="container-fluid">
+            <p class="title padding-bottom ">Scenario / Scenario Approval / <span class="red">Detail Scenario</span></p>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 nogap">
+                <a href="#" data-toggle='modal' data-target='#myModal'></i><input type="submit" value="Approve" class="k-button bttn approve " /></a>
+                <a href="#" data-toggle='modal' data-target='#myRejectModal'><input type="submit" value="Reject" class="k-button bttn k-primary" /></a>
+            </div>
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nogap margin-top">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 k-content padding-top">
+                    <!-- Begin Content-->
+                    <p class="absolute size20 weight red">Detail Scenario</p><a href="scenario-approval.html"><p class="absolute weight red right kembali">Kembali</p></a><hr class="hr-detail margin-right-kembali" />
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nogap margin-top">
+                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                            <label>Nama Target Customer <span class="margin-right10"></span>:</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                            <label>@Html.DisplayFor(model => model.TargetCustomerName)</label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 margin-top nogap">
+                        <!--profile-->
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 margin-top">
+                            <!-- 1 -->
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                    <label for="pekerjaan" class="padding-top10">Pekerjaan</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                    <input id="pekerjaan" type="text" class="border-bottom k-textbox width100" />
+                                </div>
+                            </div>
+                            <div class="row margin-top">
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                    <label for="jenis-kelamin" class="padding-top10">Jenis Kelamin</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                    <input id="jenis-kelamin" type="text" class="border-bottom k-textbox width100" />
+                                </div>
+                            </div>
+                            <div class="row margin-top">
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                    <label for="agama" class="padding-top10">Agama</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                    <input id="agama" type="text" class="border-bottom k-textbox width100" />
+                                </div>
+                            </div>
+                        </div><!-- End 1 -->
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 margin-top">
+                            <!-- 2 -->
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                    <label for="tanggal-lahir" class="padding-top10">Tanggal Lahir</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 nogap">
+                                    <input id="tanggal-lahir" type="text" class="border-bottom k-textbox width100" />
+                                </div>
+                            </div>
+                            <div class="row margin-top">
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                    <label for="tahun" class="padding-top10">Tahun</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 nogap">
+                                    <input id="Tahun" type="text" class="border-bottom k-textbox width100" />
+                                </div>
+                            </div>
+                            <div class="row margin-top">
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                    <label for="spending" class="padding-top10">Spending</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 nogap">
+                                    <input id="spending" type="text" class="border-bottom k-textbox width100" />
+                                </div>
+                            </div>
+                        </div><!-- End 2 -->
+                    </div><!--End profile-->
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nogap padding-bottom">
+                        <!--Kendaraan-->
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <!-- 1 Kendaraan-->
+                            <div class="row margin-top">
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                    <label for="jumlah-ro" class="padding-top10">Jumlah RO</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                    <input id="jumlah-ro" type="text" class="border-bottom k-textbox width100" />
+                                </div>
+                            </div>
+                            <div class="row margin-top">
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                    <label for="provinsi" class="padding-top10">Provinsi</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                    <input id="provinsi" type="text" class="border-bottom k-textbox width100" />
+                                </div>
+                            </div>
+                            <div class="row margin-top">
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                    <label for="kabupaten" class="padding-top10">Kabupaten</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                    <input id="kabupaten" type="text" class="border-bottom k-textbox width100" />
+                                </div>
+                            </div>
+                            <div class="row margin-top">
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                    <label for="kecamatan" class="padding-top10">Kecamatan</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                    <input id="kecamatan" type="text" class="border-bottom k-textbox width100" />
+                                </div>
+                            </div>
+                            <div class="row margin-top">
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                    <label for="kelurahan" class="padding-top10">Kelurahan</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                    <input id="kelurahan" type="text" class="border-bottom k-textbox width100" />
+                                </div>
+                            </div>
+                            <div class="row margin-top">
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                    <label for="market-segment" class="padding-top10">Market Segment</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                    <input id="kelurahan" type="text" class="border-bottom k-textbox width100" />
+                                </div>
+                            </div>
+                            <div class="row margin-top">
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                    <label for="market-type" class="padding-top10">Market Type</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                    <input id="market-type" type="text" class="border-bottom k-textbox width100" />
+                                </div>
+                            </div>
+                            <div class="row margin-top">
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                    <label for="market-name" class="padding-top10">Market Name</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                    <input id="market-name" type="text" class="border-bottom k-textbox width100" />
+                                </div>
+                            </div>
+                            <div class="row margin-top">
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                    <label for="customer-dari" class="padding-top10">Customer Dari</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 nogap">
+                                    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 width100">
+                                        <input id="customer-dari" type="text" class="border-bottom k-textbox width100" />
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 margin-top padding-right">
+                                        <label for="start-date">Start Date :</label>
+                                        <input id="start-date" type="text" class="border-bottom k-textbox width100" />
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 margin-top">
+                                        <label for="end-date">End Date :</label>
+                                        <input id="end-date" type="text" class="border-bottom k-textbox width100" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row margin-top">
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nogap">
+                                    <label for="tujuan" class="padding-top10">Tujuan</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                                    <input id="tujuan" type="text" class="border-bottom k-textbox width100" />
+                                </div>
+                            </div>
+                        </div><!-- End 1 Kendaraan-->
+                    </div><!-- End Kendaraan-->
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nogap margin-top padding-bottom ">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th><label>Section</label></th>
+                                        <th><label>Tanggal Mulai</label></th>
+                                        <th><label>Operator</label></th>
+                                        <th><label>Jumlah</label></th>
+                                        <th><label>Hari / Bulan</label></th>
+                                        <th><label>Logic</label></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Lorem Ipsum</td>
+                                        <td>Lorem Ipsum</td>
+                                        <td>Lorem Ipsum</td>
+                                        <td>Lorem Ipsum</td>
+                                        <td>Lorem Ipsum</td>
+                                        <td>Lorem Ipsum</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div><!-- End Content -->
+            </div>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("_CreateScenarioHistory")

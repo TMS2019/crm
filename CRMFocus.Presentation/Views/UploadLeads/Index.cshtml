@@ -1,0 +1,35 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p class="title padding-bottom margin-top">Leads Database / <span class="red">Upload New</span></p>
+<ul id="messageList"></ul>
+<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 nogap">
+    <form class="margin-bottom">
+            <div class="input-append">
+                <input type="text" id="subfile" class="k-textbox" style="width:70%">
+                <a class="k-button bttn k-primary" onclick="$('#file').click();">Browse</a>
+            </div>
+        <input name="file" id="file" type="file" aria-label="files" style="visibility:hidden;height:1px" accept=".xlsx" />
+
+    </form>
+    <input type="button" id="resetBtn" value="Reset" class="k-button bttn dark" />
+    <input type="button" id="saveBtn" value="Simpan" class="k-button bttn k-primary" />
+</div>
+<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+    <input type="button" id="previewBtn" value="Preview" class="k-button dark bttn" />
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nogap margin-top">
+    <div id="grid1"></div>
+    <div id="grid2"></div>
+</div>
+
+
+@section scripts {
+    <script type="text/javascript">
+        var userRole = '@ViewBag.UserRole';
+    </script>
+    <script type="text/javascript" src="~/Scripts/modules/uploadLeads.js"></script>   
+}
+

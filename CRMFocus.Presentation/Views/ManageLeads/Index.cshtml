@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="body-content padding-top">
+        <div class="container-fluid">
+            <p class="title padding-bottom">Leads Database / <span class="red">Manage Leads</span></p>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1">
+                    <p class="standart-font weight float-left gray">New Dealer&#42;</p>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 nogap">
+                    <form class="margin-bottom">
+                        @Html.DropDownList("newDealer", (IEnumerable<SelectListItem>)ViewBag.newDealer, new { @class = "width100" })
+                    </form>
+                </div>
+                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                    <input id="set" type="button" value="Set" class="k-button dark bttn padding-right padding-left" />
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nogap">
+                <div class="margin-bottom">
+                    <input id="reset" type="button" value="Reset" class="k-button bttn dark padding-right padding-left" />
+                    <input id="save" type="button" value="Simpan" class="k-button bttn k-primary padding-right padding-left" />
+                </div>
+                <div id="grid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="text" id="suspecIdtemp"  style="display:none;"/>
+
+@section scripts {
+    <script type="text/javascript" src="~/Scripts/modules/manageLeads.js"></script>
+}

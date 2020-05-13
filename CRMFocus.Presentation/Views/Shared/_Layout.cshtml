@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="author" content=" ">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="referrer" content="always" />
+    <meta name="keywords" content=" " />
+    <meta name="description" content=" " />
+    <meta name="generator" content="SEOmatic" />
+    <meta name="geo.placename" content=" " />
+    <meta name="date" content="01-05-2017" />
+    <meta name="sitecode" content="id" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content=" " />
+    <meta name="twitter:creator" content=" ">
+    <meta name="twitter:url" content=" " />
+    <meta name="twitter:image:src" content=" " />
+    <meta name="twitter:description" content=" " />
+    <meta property="og:url" content=" " />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content=" " />
+    <meta property="og:description" content=" " />
+    <meta property="og:image" content=" " />
+    <meta property="og:image:width" content=" " />
+    <meta property="og:image:height" content=" " />
+    <meta property="og:site_name" content=" " />
+    <meta property="og:see_also" content=" " />
+    <title>@ViewBag.Title - CRM Focus</title>
+    @Styles.Render("~/CRMFocus/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <!-- Top-->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Left -->
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand"><img src="/frontend/images/left-logo.png" alt="logo" width="250px" height="55px"></a>
+            </div>
+            <!-- /Left -->
+            <!-- Right -->
+            <div class="nav navbar-nav navbar-right">
+                <a href="#" class="navbar-brand"><img src="/frontend/images/right-logo.png" alt="logo" width="273px" height="54px"></a>
+            </div>
+            <!-- /Right -->
+        </div>
+    </nav>
+    <div class="content-header navbar navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 nogap">
+                    <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1 nogap">
+                    </div>
+                    <div class="col-xs-12 col-sm-11 col-md-11 col-lg-11">
+                        <div class="container nogap margin-left10">
+                            <p class="crmf spacing-2">CRM FOCUS</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <div class="users right absolute">
+                        <form id="searching">
+                            <input type="search" placeholder="search">
+                        </form>
+                        <ul class="icon">
+                            @Html.Partial("_LoginPartial")
+                            <li>
+                                <a href="#"><div class="bgcircle"><i class="fa fa-user size20 white display-block padding-top10" aria-hidden="true"></i></div></a>
+                            </li>
+                            <li><a href="#"><div class="bgcircle"><i class="fa fa-bell size20 white display-block padding-top10" aria-hidden="true"></i></div></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Top -->
+    <!-- Sidebar -->
+    <h1 id="home">
+        <a id="menu-toggle" href="#" class="btn-menu toggle text-center">
+            &#9776;
+        </a>
+    </h1>
+    <div id="wrapper">
+        <div id="sidebar-wrapper">
+            <nav id="navwrap">
+                <ul class="sidebar-nav nav">
+                    <li class="text-center button">
+                        <a href="index.html">
+                            <i class="fa fa-tachometer fa-3x" aria-hidden="true"></i><br />Dashboard
+                        </a>
+                    </li>
+                    <li class="text-center button @(ViewContext.RouteData.Values["Controller"].ToString() == "Leads" ? "activated" : "") @(ViewContext.RouteData.Values["Controller"].ToString() == "ManageLeads" ? "activated" : "") @(ViewContext.RouteData.Values["Controller"].ToString() == "InactiveLeads" ? "activated" : "")">
+                        <a href="#"><i class="fa fa-folder-open-o fa-3x" aria-hidden="true"></i><br />Database</a>
+                        <ul class="sub">
+                            <li><img src="/frontend/images/bullet.png">@Html.ActionLink("Leads", "Index", "Leads")</li>
+                            <li><img src="/frontend/images/bullet.png">@Html.ActionLink("Manage Leads", "Index", "ManageLeads")</li>
+                            <li><img src="/frontend/images/bullet.png">@Html.ActionLink("Inactive Leads", "Index", "InactiveLeads")</li>
+                        </ul>
+                    </li>
+                    <li class="text-center @(ViewContext.RouteData.Values["Controller"].ToString() == "ScenarioApproval" ? "activated" : "") @(ViewContext.RouteData.Values["Controller"].ToString() == "Scenario" ? "activated" : "")">
+                        <a href="#"><i class="fa fa-pencil-square-o fa-3x" aria-hidden="true"></i><br />Scenario</a>
+                        <ul class="sub">
+                            <li><img src="/frontend/images/bullet.png">@Html.ActionLink("Scenario List", "Index", "Scenario")</li>
+                            <li><img src="/frontend/images/bullet.png">@Html.ActionLink("Scenario Approval", "Index", "ScenarioApproval")</li>
+                        </ul>
+                    </li>
+                    <li class="text-center @(ViewContext.RouteData.Values["Controller"].ToString() == "SuspectToProspect" ? "activated" : "") @(ViewContext.RouteData.Values["Controller"].ToString() == "ProspectToDeal" ? "activated" : "")">
+                        <a href="#"><img src="/frontend/images/ro.png" width="41" height="26"><br />RO to H1</a>
+                        <ul class="sub">
+                            <li><img src="/frontend/images/bullet.png">@Html.ActionLink("Suspect to Prospect", "Index", "SuspectToProspect")</li>
+                            <li><img src="/frontend/images/bullet.png">@Html.ActionLink("Prospect to Deal", "Index", "ProspectToDeal")</li>
+                        </ul>
+                    </li>
+                    <li class="text-center">
+                        <a href="#">
+                            <img src="/frontend/images/h2.png" width="41" height="26"><br />H2
+                        </a>
+                    </li>
+                    <li class="text-center @(ViewContext.RouteData.Values["Controller"].ToString() == "ManageSendSms" ? "activated" : "") @(ViewContext.RouteData.Values["Controller"].ToString() == "FollowUpBySms" ? "activated" : "")">
+                        <a href="#"><i class="fa fa-envelope-o fa-3x" aria-hidden="true"></i><br />Manage SMS</a>
+                        <ul class="sub">
+                            <li><img src="/frontend/images/bullet.png">@Html.ActionLink("Manage Send SMS", "Index", "ManageSendSms")</li>
+                            <li><img src="/frontend/images/bullet.png">@Html.ActionLink("Follow Up by  SMS", "Index", "FollowUpBySms")</li>
+                        </ul>
+                    </li>
+                    <li class="text-center">
+                        <a href="#">
+                            <i class="fa fa-pie-chart fa-3x" aria-hidden="true"></i><br />Report
+                        </a>
+                    </li>
+                    <li class="text-center @(ViewContext.RouteData.Values["Controller"].ToString() == "ScenarioSetting" ? "activated" : "") @(ViewContext.RouteData.Values["Controller"].ToString() == "UnitPriceSetting" ? "activated" : "")">
+                        <a href="#"><i class="fa fa-cog fa-3x" aria-hidden="true"></i><br />Settings</a>
+                        <ul class="sub">
+                            <li><img src="/frontend/images/bullet.png">@Html.ActionLink("Scenario Setting", "Index", "ScenarioSetting")</li>
+                            <li><img src="/frontend/images/bullet.png">@Html.ActionLink("Unit Price Setting", "Index", "UnitPriceSetting")</li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Page content -->
+        <div id="page-content-wrapper">
+            <div class="page-content inset">
+                <div class="row">
+                    <div class="body-content">
+                        <div class="container-fluid">
+                            @RenderBody()
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /page content-->
+    </div>
+    <!-- /Sidebar -->
+    @Scripts.Render("~/CRMFocus/js")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
